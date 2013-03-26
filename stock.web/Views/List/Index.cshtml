@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+@model List<string>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3">
+            <ul id="list" class="nav nav-pills nav-stacked">
+                @foreach (var name in @Model)
+                {
+                    <li><a id="@name" href="#">@name</a></li>
+                }
+            </ul>
+        </div>
+        <div id="message" class="alert alert-success span9">
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#list li>a').click(function () {
+                $.post
+                (
+                    '@Url.Action("Greetings")', // url is /List/Greetings
+                    {
+                        name: $(this).text()
+                    },
+                    function (data) { // success function
+                        $('#message').html(data);
+                    }
+                );
+            });
+        });
+    </script>
+}
