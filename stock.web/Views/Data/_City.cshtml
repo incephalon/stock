@@ -1,0 +1,30 @@
+﻿@model stock.web.Models.City
+<div class="container span3 well">
+    <div class="row-fluid">
+        <form class="form-horizontal">
+            <fieldset>
+                <legend>@Model.Name</legend>
+                <div class="control-group">
+                    <label class="control-label">Country Code</label>
+                    <div class="controls">
+                        <span class="uneditable-input input-small">@Model.CountryCode</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">District</label>
+                     <div class="controls">
+                        <span class="uneditable-input input-small">@Model.District</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Population</label>
+                     <div class="controls">
+                        <span class="uneditable-input input-small">@Model.Population</span>
+                    </div>
+                </div>
+            </fieldset>
+
+        </form>
+
+    </div>
+</div>

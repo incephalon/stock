@@ -6,15 +6,16 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-responsive.min.css" rel="stylesheet" />
     <link href="~/Content/site.css" rel="stylesheet" />
-
+    @RenderSection("styles", false)
     <title>@ViewBag.Title</title>
 
 </head>
-<body>
-    @RenderBody()
+    <body>
+        @Html.Partial("_Navigation")
+        @RenderBody()
     
-    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    @RenderSection("scripts", false)
-</body>
+        <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        @RenderSection("scripts", false)
+    </body>
 </html>

@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<stock.web.Models.City>
+
+<div class="container-fluid">
+    @if (Model == null)
+    {
+        <div class="well alert alert-error">
+            Could not connect to the database.
+        </div>
+    }
+    else
+    {
+        foreach (var city in Model)
+        {
+            @Html.Partial("_City", city)
+        }
+    }
+</div>
